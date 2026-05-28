@@ -1,9 +1,10 @@
 function outer() {
     let name = "Rohit";
 
-    function inner() {
+    return function inner() {
         console.log(name);
     }
-    inner();
+
 }
-outer();
+display = outer();
+display();
