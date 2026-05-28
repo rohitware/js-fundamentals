@@ -1,13 +1,28 @@
 function outer() {
-    let count = 0;
+    let count = 6;
 
-    return function () {
-        count++;
-        console.log(count);
+    return {
+        increment() {
+            count++;
+            console.log(count);
+
+        },
+
+        decrement() {
+            count--;
+            console.log(count);
+
+        },
+
+        multiplication(num) {
+            count = count * num;
+            console.log(count);
+
+        }
 
     };
 }
-const counter = outer();
-counter();
-counter();
-counter();
+const result = outer();
+result.increment();
+result.decrement();
+result.multiplication(5);
