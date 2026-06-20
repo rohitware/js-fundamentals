@@ -23,5 +23,14 @@ FetchUserData(1)
     })
     .finally(() => {
         console.log(`Requsted completed`);
+    })
 
+
+// Test with wrong userId
+FetchUserData(99)
+    .then(user => {
+        console.log(user);
+    })
+    .catch(error => {
+        console.log(error);
     })
