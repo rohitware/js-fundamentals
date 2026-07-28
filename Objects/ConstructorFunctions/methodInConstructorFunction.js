@@ -4,8 +4,10 @@ function Person(name, age) {
 }
 // method added to prototype
 
+Person.prototype.city = "Bangalore";
+
 Person.prototype.greet = function () {
-    console.log(`Hello i M ${this.name}`);
+    console.log(`Hello i M ${this.name} from ${this.city}`);
 }
 
 Person.prototype.showAge = function () {
@@ -23,3 +25,8 @@ console.log(person2);
 person2.greet();
 person2.showAge();
 
+console.log(person1.hasOwnProperty("name")); // true
+
+console.log(person1.hasOwnProperty("city")); // false
+
+console.log(person1.city); // Bangalore
